@@ -1,0 +1,141 @@
+/* ==========================================================================
+   MEDIA QUERIES - RESPONSIVIDADE COMPLETA
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .section-padding {
+        padding: 80px 24px;
+    }
+    .hero-content h1 {
+        font-size: 48px;
+    }
+    .historia-grid, .contato-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .produtos-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .diferenciais-grid, .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 0;
+    }
+    
+    /* Configuração Menu Hambúrguer Móvel */
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--primary);
+        flex-direction: column;
+        justify-content: center;
+        gap: 40px;
+        transition: var(--transition);
+        z-index: 999;
+        padding: 40px;
+        border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    header:not(.scrolled) .nav-link {
+        color: var(--bg-white);
+    }
+    
+    header.scrolled .nav-menu {
+        background-color: rgba(255, 255, 255, 0.98);
+    }
+    
+    header.scrolled .nav-link {
+        color: var(--primary);
+    }
+    
+    .nav-cta {
+        display: none;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    
+    /* Estado Ativo do Ícone */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+    
+    /* Timeline Mobile */
+    .timeline::after {
+        left: 31px;
+    }
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 0;
+    }
+    .timeline-item::after {
+        left: 21px;
+        right: auto;
+    }
+    .right {
+        left: 0;
+    }
+    .right::after {
+        left: 21px;
+    }
+    
+    .produtos-grid, .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .numeros-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .historia-badge {
+        position: static;
+        margin-top: 30px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 38px;
+    }
+    .hero-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .produtos-grid, .galeria-grid, .diferenciais-grid, .numeros-grid, .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    .section-header h2 {
+        font-size: 30px;
+    }
+    .historia-mvv {
+        grid-template-columns: 1fr;
+    }
+    .contato-form-wrapper {
+        padding: 30px;
+    }
+}
